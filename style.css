@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    --main-white: #fff;
+    --main-black: #000;
+    --main-light-grey: #ddd;
+    --main-grey: #bbb;
+    --main-yellow: #ffc917;
+    --main-dark-yellow: #ffb519;
+    --main-blue: #0063d3;
+    --main-dark-blue: #004ba0;
+    --main-blue-font: #003082;
+
+    --main-red: #ff1717;
+    --main-green: #19c424;
+
+    --section-padding-top: 1em;
+    --section-padding-right: 2em;
+
+    --input-padding-top: .5em;
+    --input-padding-right: 1em;
+
+}
+
+body {
+    background-color: var(--main-light-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.warning {
+    padding: var(--section-padding-top) var(--section-padding-right);
+    background-color: var(--main-yellow);
+    box-shadow: inset 0 -2px 0 var(--main-dark-yellow);
+    color: var(--main-blue-font);
+    position: relative;
+
+    h2 {
+        margin-bottom: .5em;
+    }
+
+    label {
+        position: absolute;
+        right: var(--section-padding-right);
+        top: var(--section-padding-top);
+
+        svg {
+            width: 1.5em;
+            height: 1.5em;
+            fill: var(--main-blue-font);
+        }
+
+        input {
+            display: none;
+        }
+    }
+}
+
+.warning:has(:checked) {
+    display: none;
+}
+
+form {
+    background-color: var(--main-white);
+    width: 40em;
+    padding: var(--section-padding-top) var(--section-padding-right);
+    box-shadow: inset 0 -2px 0 var(--main-grey);
+    color: var(--main-blue-font);
+
+    p {
+        color: var(--main-black);
+    }
+
+    label > p {
+        color: var(--main-blue-font);
+    }
+
+    input[type=text], 
+    input[type=number] {
+        background-color: var(--main-light-grey);
+        padding: var(--input-padding-top);
+        border: none;
+    }
+
+    input[type=text]:focus, 
+    input[type=number]:focus {
+        outline: none;
+        box-shadow: inset 0 -2px 0 var(--main-dark-yellow);
+    }
+
+    input[type="text"]:user-invalid,
+    input[type="number"]:user-invalid {
+        border: 2px solid var(--main-red);
+    }
+    
+    input[type="text"]:user-valid,
+    input[type="number"]:user-valid {
+        border: 2px solid var(--main-green);
+    }
+}
