@@ -150,9 +150,9 @@ form {
     /* -------------- */
     /* labels for input type text and date */
     label:has(input[type=text]:required, input[type=date]),
-    fieldset:has(> label > input[type=radio]) legend,
-    fieldset:has(> div > label > input[type=radio]) legend,
-    p:has(+ label > input) {
+    fieldset:has(> label > input[type=radio]:required) legend,
+    fieldset:has(> div > label > input[type=radio]:required) legend,
+    p:has(+ label > input:required) {
         position: relative;
 
         &::before {
